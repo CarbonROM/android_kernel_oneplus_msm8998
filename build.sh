@@ -14,7 +14,15 @@ KERNEL="Image.gz-dtb"
 DEFCONFIG="cheeseburger_defconfig"
 
 # Kernel Details
-VER=CarboniteKERNEL-R1
+if [ "$1" == "cr" ]
+then
+    ROM="CR"
+    git am 0001-SQUASHED-Reconfigure-gestures-implementation.patch
+else
+    ROM="OOS"
+fi
+
+VER="CarboniteKERNEL-$ROM-R2"
 VARIANT="OP5-N"
 
 # Vars
@@ -121,5 +129,10 @@ echo
 if [ -f "$ZIP_MOVE/$VER-$VARIANT.zip" ]
 then
     echo $VER-$VARIANT.zip
+    echo
+fi
+if [ "$1" == "cr" ]
+then
+    echo "REMEMBER THAT THIS IS A CR BUILD!"
     echo
 fi
