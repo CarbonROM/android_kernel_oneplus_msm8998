@@ -136,7 +136,7 @@ struct test_header {
 #define Wgestrue            13  // W
 #define Sgestrue            14  // S
 
-#define KEY_DOUBLE_TAP          KEY_F1	// double tap to wake
+#define KEY_DOUBLE_TAP          KEY_WAKEUP	// double tap to wake
 #define KEY_GESTURE_CIRCLE      KEY_F2	// draw circle to lunch camera
 #define KEY_GESTURE_TWO_SWIPE	KEY_F3	// swipe two finger vertically to play/pause
 #define KEY_GESTURE_V           KEY_F4	// draw v to toggle flashlight
@@ -3284,6 +3284,11 @@ static int init_synaptics_proc(void)
 		ret = -ENOMEM;
         TPD_ERR("Couldn't create gesture_enable\n");
 	}
+        prEntry_tmp = proc_create( "double_tap_enable", 0666, prEntry_tp, &tp_gesture_proc_fops);
+        if(prEntry_tmp == NULL){
+                ret = -ENOMEM;
+        TPD_ERR("Couldn't create double_tap_enable\n");
+        }
 	prEntry_tmp = proc_create("coordinate", 0444, prEntry_tp, &coordinate_proc_fops);
 	if(prEntry_tmp == NULL){
 		ret = -ENOMEM;
