@@ -1473,6 +1473,10 @@ static void gsi_rndis_ipa_reset_trigger(struct gsi_data_port *d_port)
 	spin_unlock_irqrestore(&rndis->d_port.lock, flags);
 }
 
+
+
+
+
 void gsi_rndis_flow_ctrl_enable(bool enable, struct rndis_params *param)
 {
 	struct f_gsi *rndis = param->v;
