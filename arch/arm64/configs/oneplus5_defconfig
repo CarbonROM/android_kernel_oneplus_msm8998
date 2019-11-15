@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm64 4.4.153 Kernel Configuration
+# Linux/arm64 4.4.201 Kernel Configuration
 #
 CONFIG_ARM64=y
 CONFIG_64BIT=y
@@ -1717,7 +1717,7 @@ CONFIG_PHYLIB=y
 # CONFIG_MICREL_PHY is not set
 # CONFIG_DP83848_PHY is not set
 # CONFIG_DP83867_PHY is not set
-# CONFIG_MICROCHIP_PHY is not set
+CONFIG_MICROCHIP_PHY=y
 # CONFIG_FIXED_PHY is not set
 # CONFIG_MDIO_BITBANG is not set
 # CONFIG_MDIO_OCTEON is not set
@@ -4575,7 +4575,7 @@ CONFIG_QUOTACTL=y
 # CONFIG_AUTOFS4_FS is not set
 CONFIG_FUSE_FS=y
 # CONFIG_CUSE is not set
-# CONFIG_OVERLAY_FS is not set
+CONFIG_OVERLAY_FS=y
 
 #
 # Caches
